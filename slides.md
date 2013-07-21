@@ -3,8 +3,6 @@
 
 1. When to Use
 1. Checked In Plugin Directory
-   1. Grails < 2.3
-   1. Works with installed plugins not build config plugins //TODO Confirm with Code example
 1. Inline plugin
    1. Dependancy resolution doens't work like build config plugin
    1. some odd functionality bugs. IE smart sprites resources
@@ -16,6 +14,7 @@
 1. Strategy for Forks
    1. Repo for each plugin
    1. Branch for your changes
+1. Summary
 1. Gradle PoC?
 
 
@@ -30,8 +29,6 @@
 ## Checked In Plugin Directory
 
 Keep all plugins inside the application directory so they can be checked in with the code.
-
-Grails < 2.3
 
 ~~ 
 ### How
@@ -49,7 +46,6 @@ In BuildConfig.groovy add:
 ### The Bad
 
 * All or Nothing for Plugins
-* Only for installed plugins
 * Ignores Versions
 
 ~~
@@ -58,6 +54,43 @@ In BuildConfig.groovy add:
 * Unclear on what has changed
 * Hard to use the power of VCS
 * Upgrade Pain
+* Easy to destory changes
 
 ~~~~
 ## Inline Plugin
+
+Add a plugin from a local directory.
+
+~~
+### How
+
+For each plugin add a line like the following in BuildConfig.groovy
+
+`grails.plugin.location.'sanitizer' = "./snapshot-plugins/grails-sanitizer"`
+
+~~
+### The Good
+
+~~
+### The Bad
+
+~~
+## The Ugly
+
+~~~~
+## Custom Repo
+
+~~
+## How
+
+~~
+### The Good
+
+~~
+### The Bad
+
+~~
+## The Ugly
+
+~~~~
+## Summary
