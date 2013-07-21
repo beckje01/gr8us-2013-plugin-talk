@@ -4,17 +4,15 @@
 1. When to Use
 1. Checked In Plugin Directory
 1. Inline plugin
-   1. Dependancy resolution doens't work like build config plugin
-   1. some odd functionality bugs. IE smart sprites resources
    1. legacy resolve?
 1. Custom Repo
    1. Works well but extra setup
    1. bintray (no snapshots)
    1. versioning not just snapshoting
+1. Summary
 1. Strategy for Forks
    1. Repo for each plugin
    1. Branch for your changes
-1. Summary
 1. Gradle PoC?
 
 
@@ -35,24 +33,25 @@ Keep all plugins inside the application directory so they can be checked in with
 
 In BuildConfig.groovy add:
 
-`grails.project.plugins.dir="./plugins"`
+	grails.project.plugins.dir="./plugins"
 
 ~~
 ### The Good
 
 * Easy Setup
+* Chagnes Reload //TODO confirm with code
 
 ~~
 ### The Bad
 
 * All or Nothing for Plugins
 * Ignores Versions
+* Hard to use the power of VCS
 
 ~~
 ### The Ugly
 
 * Unclear on what has changed
-* Hard to use the power of VCS
 * Upgrade Pain
 * Easy to destory changes
 
@@ -66,31 +65,63 @@ Add a plugin from a local directory.
 
 For each plugin add a line like the following in BuildConfig.groovy
 
-`grails.plugin.location.'sanitizer' = "./snapshot-plugins/grails-sanitizer"`
+	grails.plugin.location.'sanitizer' = "./snapshot-plugins/sanitizer"
 
 ~~
 ### The Good
 
+* Allows a single local plugin
+* Changes Reload
+* Can use VCS power
+
 ~~
 ### The Bad
 
+* No Versions
+
 ~~
 ## The Ugly
+
+* Can use an absolute or relative path not in the repo
+* Odd dependancy resolution
+* Some plugins will work as Inline and not as a normal plugin
 
 ~~~~
 ## Custom Repo
 
+Expose the forks and unreleased plugins into a repo, that isn't grails central repo.
+
 ~~
 ## How
+
+In BuildConfig.groovy add the repo
+
+	grails.project.dependency.resolution = {
+		repositories {
+			mavenRepo "http://repo.example.org/grails/forks/"
+		}
+	}
+
 
 ~~
 ### The Good
 
+* Supports Versioning 
+* Dependacy resolution works the way the rest of Grails does
+
 ~~
 ### The Bad
+
+* Changes don't reload
+* Extra step to release changes to the repo
 
 ~~
 ## The Ugly
 
+* Takes more time to iterate then it should
+
 ~~~~
 ## Summary
+
+~~~~
+## Stratgey for Forks
