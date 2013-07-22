@@ -6,6 +6,6 @@ Slides from the talk given at [GR8Conf US](http://gr8conf.us/index).
 
 By [@beckje01](http://twitter.com/beckje01)
 
-View the slides [here](http://beckje01.github.io/TODO).
+View the slides [here](http://bit.ly/gr8-plugin).
 
 Slides use [reveal.js](http://lab.hakim.se/reveal-js/#/)

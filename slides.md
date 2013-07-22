@@ -17,6 +17,7 @@
 Jeff Beck
 
 beckje01 on GitHub and Twitter
+
 Sr. Software Engineer at ReachLocal
 
 
@@ -145,7 +146,7 @@ In BuildConfig.groovy add the repo
 ~~~~
 ## Summary
 
-Overall for production use the custom repo is the best option currently.
+Overall for production using the custom repo is the best option currently.
 
 Use inline sparingly during development.
 
