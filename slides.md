@@ -4,15 +4,14 @@
 1. When to Use
 1. Checked In Plugin Directory
 1. Inline plugin
-   1. legacy resolve?
 1. Custom Repo
-   1. Works well but extra setup
-   1. bintray (no snapshots)
-   1. versioning not just snapshoting
 1. Summary
-1. Strategy for Forks
+1. Working with Forks
    1. Repo for each plugin
    1. Branch for your changes
+1. Strategy for Unreleased
+   1. bintray (no snapshots)
+   1. versioning not just snapshoting
 1. Gradle PoC?
 
 
@@ -123,5 +122,32 @@ In BuildConfig.groovy add the repo
 ~~~~
 ## Summary
 
+Overall for production use the custom repo is the best option currently.
+
+Use inline sparingly during development.
+
 ~~~~
-## Stratgey for Forks
+## Working with Forks
+
+First Identify:
+
+* Expected Life
+* Degree of Fork
+* Internal Changes
+
+~~
+## Working with Forks
+
+Tend to adding features allowing customization.
+
+~~
+## Working with Forks
+
+Create a repo for each plugin. Run CI. 
+
+~~
+## Working with Fork - VCS
+
+*  
+
+
