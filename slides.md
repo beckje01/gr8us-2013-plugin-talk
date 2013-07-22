@@ -1,18 +1,23 @@
 ## Agenda
  <!-- Many times there are changes that need to happen to a plugin for use in your application, be it a patched bug fix, new features, or simply needing the unreleased bleeding edge code from the repo; but now you are left maintaining a fork. Additionally you may have plugins created to be internal only to share between a few applications but not to the outside world, now you need to deal with the internal plugins as well. Overall there are a few ways to deal with these types of plugins: checked in plugin directory, inline plugins, and custom repository. I will go through how each of these methods works and some of the advantages and disadvantages with each. I have used all these in production and will also share what has happened over time with some of these approaches. -->
 
+1. Who am I
 1. When to Use
 1. Checked In Plugin Directory
 1. Inline plugin
 1. Custom Repo
 1. Summary
 1. Working with Forks
-   1. Repo for each plugin
-   1. Branch for your changes
 1. Strategy for Unreleased
-   1. bintray (no snapshots)
-   1. versioning not just snapshoting
 1. Gradle PoC?
+
+~~~~
+## Who am I
+
+Jeff Beck
+
+beckje01 on GitHub and Twitter
+Sr. Software Engineer at ReachLocal
 
 
 ~~~~
@@ -85,6 +90,24 @@ For each plugin add a line like the following in BuildConfig.groovy
 * Odd dependancy resolution
 * Some plugins will work as Inline and not as a normal plugin
 
+~~
+## Example of Use
+
+	// FORKED.
+	grails.plugin.location.'commentable' = "./plugins/commentable-0.7.3"
+	grails.plugin.location.'google-visualization' = "./plugins/google-visualization-0.4.2"
+
+	// SUBMODULES
+	grails.plugin.location.'ckeditor' = "./snapshot-plugins/grails-ckeditor"
+
+	// UNMODIFIED. Not in main repository. Installed locally.
+	grails.plugin.location.'image-tools' = "./plugins/image-tools-1.0.4"
+
+~~
+## Example of Evil 
+
+	grails.plugin.location.'rlapi' = "../../company_plugins/rlapi"
+
 ~~~~
 ## Custom Repo
 
@@ -136,18 +159,34 @@ First Identify:
 * Internal Changes
 
 ~~
-## Working with Forks
+### Working with Forks
 
 Tend to adding features allowing customization.
 
 ~~
-## Working with Forks
+### Working with Forks
 
 Create a repo for each plugin. Run CI. 
 
 ~~
-## Working with Fork - VCS
+### Working with Fork - VCS
 
-*  
+* Branch for the changes
+* Use submodules to pull in these plugins while working with an inline plugin
+
+~~~~
+## Strategy for Unreleased
+
+Why is it unreleased?
+
+~~
+## Use Bintray
+
+Bintray is a hosted solution you can use to host plugins that haven't been published. But no snapshots.
+
+~~
+## Use Versioning
+
+Don't just denpend on snapshots. 
 
 
