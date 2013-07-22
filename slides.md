@@ -9,7 +9,7 @@
 1. Summary
 1. Working with Forks
 1. Strategy for Unreleased
-1. Gradle PoC?
+<!-- 1. Gradle PoC? -->
 
 ~~~~
 ## Who am I
@@ -43,7 +43,7 @@ In BuildConfig.groovy add:
 ### The Good
 
 * Easy Setup
-* Chagnes Reload //TODO confirm with code
+* Changes Reload
 
 ~~
 ### The Bad
@@ -57,7 +57,7 @@ In BuildConfig.groovy add:
 
 * Unclear on what has changed
 * Upgrade Pain
-* Easy to destory changes
+* Easy to destroy changes
 
 ~~~~
 ## Inline Plugin
@@ -87,7 +87,7 @@ For each plugin add a line like the following in BuildConfig.groovy
 ## The Ugly
 
 * Can use an absolute or relative path not in the repo
-* Odd dependancy resolution
+* Odd dependency resolution
 * Some plugins will work as Inline and not as a normal plugin
 
 ~~
@@ -129,7 +129,7 @@ In BuildConfig.groovy add the repo
 ### The Good
 
 * Supports Versioning 
-* Dependacy resolution works the way the rest of Grails does
+* Dependency resolution works the way the rest of Grails does
 
 ~~
 ### The Bad
@@ -187,6 +187,4 @@ Bintray is a hosted solution you can use to host plugins that haven't been publi
 ~~
 ## Use Versioning
 
-Don't just denpend on snapshots. 
-
-
+Don't just depend on snapshots. 
