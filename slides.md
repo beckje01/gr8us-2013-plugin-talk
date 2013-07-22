@@ -109,6 +109,18 @@ For each plugin add a line like the following in BuildConfig.groovy
 
 	grails.plugin.location.'rlapi' = "../../company_plugins/rlapi"
 
+~~
+## Leading To
+
+In some build script you get:
+
+	if [ -d "$WORKSPACE/company_plugins" ]; then
+	  cd "$WORKSPACE/company_plugins/rlapi"
+	  git pull origin
+	else
+	  git clone -o origin git@git.example.com:company_plugins "$WORKSPACE/company_plugins"
+	fi
+
 ~~~~
 ## Custom Repo
 
